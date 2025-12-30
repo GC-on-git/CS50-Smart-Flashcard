@@ -9,7 +9,6 @@ from app.main import app
 from app.db.session import Base, get_db
 from app.core.config import settings
 
-# Test database
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -71,7 +70,6 @@ def test_register_duplicate_email(client):
 
 def test_login(client):
     """Test user login."""
-    # Register first
     client.post(
         "/auth/register",
         json={
@@ -80,7 +78,6 @@ def test_login(client):
             "password": "testpassword123"
         }
     )
-    # Login
     response = client.post(
         "/auth/login",
         data={
@@ -107,7 +104,6 @@ def test_login_invalid_credentials(client):
 
 def test_get_profile(client):
     """Test getting user profile with JWT."""
-    # Register and login
     client.post(
         "/auth/register",
         json={
@@ -125,7 +121,6 @@ def test_get_profile(client):
     )
     token = login_response.json()["access_token"]
     
-    # Get profile
     response = client.get(
         "/auth/profile",
         headers={"Authorization": f"Bearer {token}"}

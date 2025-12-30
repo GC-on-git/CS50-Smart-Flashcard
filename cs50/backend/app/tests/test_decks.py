@@ -66,7 +66,6 @@ def test_create_deck(client, auth_token):
 
 def test_list_decks(client, auth_token):
     """Test listing decks."""
-    # Create a deck first
     client.post(
         "/decks",
         json={"title": "Test Deck", "description": "A test deck"},
@@ -134,7 +133,6 @@ def test_delete_deck(client, auth_token):
     )
     assert response.status_code == 204
     
-    # Verify deck is deleted
     get_response = client.get(
         f"/decks/{deck_id}",
         headers={"Authorization": f"Bearer {auth_token}"}

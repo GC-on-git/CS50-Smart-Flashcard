@@ -17,7 +17,9 @@ from app.core.config import settings
 # Import all models
 from app.models.user import User
 from app.models.deck import Deck
-from app.models.card import Card
+from app.models.card import Card, CardOption, FlashcardReview
+from app.models.streak import UserStreak
+from app.models.user_preferences import UserPreferences
 
 # this is the Alembic Config object
 config = context.config

@@ -4,7 +4,7 @@ FastAPI MVP - Main Application Entry Point
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.auth import routes as auth
-from app.routers import users, decks, cards
+from app.routers import users, decks, cards, preferences, statistics
 
 app = FastAPI(
     title="FastAPI MVP",
@@ -12,7 +12,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -21,11 +20,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers with /api/v1 prefix for API versioning
 app.include_router(auth.router, prefix="/api/v1")
 app.include_router(users.router, prefix="/api/v1")
 app.include_router(decks.router, prefix="/api/v1")
 app.include_router(cards.router, prefix="/api/v1")
+app.include_router(preferences.router, prefix="/api/v1")
+app.include_router(statistics.router, prefix="/api/v1")
 
 @app.get("/")
 async def root():

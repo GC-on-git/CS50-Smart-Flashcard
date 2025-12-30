@@ -35,8 +35,6 @@ class DeckWithCards(DeckResponse):
     
     class Config:
         from_attributes = True
-
-# Import here to avoid circular imports
 from app.schemas.card import CardResponse
 
 DeckWithCards.model_rebuild()

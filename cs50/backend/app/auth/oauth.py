@@ -7,7 +7,6 @@ from authlib.integrations.starlette_client import OAuth
 from starlette.config import Config
 from app.core.config import settings
 
-# Initialize OAuth
 config_dict = {}
 if settings.GOOGLE_CLIENT_ID:
     config_dict.update({
@@ -23,7 +22,6 @@ if settings.GITHUB_CLIENT_ID:
 
 oauth = OAuth(Config(environ=config_dict))
 
-# Register OAuth providers
 if settings.GOOGLE_CLIENT_ID:
     oauth.register(
         name='google',
@@ -33,7 +31,6 @@ if settings.GOOGLE_CLIENT_ID:
         }
     )
 
-# GitHub OAuth
 if settings.GITHUB_CLIENT_ID:
     oauth.register(
         name='github',
@@ -73,7 +70,6 @@ async def get_oauth_user_info(provider: str, token: Dict) -> Optional[Dict[str, 
             client = oauth.github
             resp = await client.get('user', token=token)
             user_info = resp.json()
-            # Get email from GitHub (might need separate call)
             email_resp = await client.get('user/emails', token=token)
             emails = email_resp.json()
             primary_email = next((e['email'] for e in emails if e.get('primary')), emails[0]['email'] if emails else None)

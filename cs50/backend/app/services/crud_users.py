@@ -98,7 +98,6 @@ def update_user(db: Session, user_id: int, user_update: UserUpdate) -> Optional[
     
     update_data = user_update.model_dump(exclude_unset=True)
     
-    # Hash password if provided
     if "password" in update_data:
         from app.auth.password_utils import hash_password
         update_data["hashed_password"] = hash_password(update_data.pop("password"))

@@ -34,7 +34,6 @@ async def register(
     Raises:
         HTTPException: If email or username already exists
     """
-    # Check if user already exists
     db_user = get_user_by_email(db, email=user_data.email)
     if db_user:
         raise HTTPException(
@@ -42,7 +41,6 @@ async def register(
             detail="Email already registered"
         )
     
-    # Check if username already exists
     from app.services.crud_users import get_user_by_username
     db_user = get_user_by_username(db, username=user_data.username)
     if db_user:
@@ -51,7 +49,6 @@ async def register(
             detail="Username already taken"
         )
     
-    # Create new user
     hashed_password = hash_password(user_data.password)
     new_user = create_user(
         db=db,
@@ -97,7 +94,6 @@ async def login(
             detail="Inactive user"
         )
     
-    # Create token pair
     tokens = create_token_pair(user.id)
     
     return Token(
@@ -151,7 +147,6 @@ async def refresh_token(
             detail="Invalid refresh token"
         )
     
-    # Decode refresh token to get user_id for returning refresh token
     from .jwt_handler import verify_token
     payload = verify_token(refresh_token)
     if payload is None:

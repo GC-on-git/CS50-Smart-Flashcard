@@ -2,7 +2,7 @@
 Security utilities
 """
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -24,9 +24,9 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     """Create a JWT access token."""
     to_encode = data.copy()
     if expires_delta:
-        expire = datetime.utcnow() + expires_delta
+        expire = datetime.now(timezone.utc) + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+        expire = datetime.now(timezone.utc) + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
     return encoded_jwt
@@ -37,23 +37,18 @@ def decode_access_token(token: str) -> Optional[dict]:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
         return payload
     except jwt.ExpiredSignatureError:
-        # Token has expired
         logger.warning("JWT token has expired")
         return None
     except jwt.JWTClaimsError as e:
-        # Invalid token claims (e.g., expired, wrong audience)
         logger.warning(f"JWT claims validation failed: {e}")
         return None
     except jwt.InvalidSignatureError:
-        # Token signature is invalid (wrong SECRET_KEY)
         logger.warning("JWT token signature is invalid - possible SECRET_KEY mismatch")
         return None
     except jwt.InvalidTokenError as e:
-        # Invalid token format or other token errors
         logger.warning(f"JWT token is invalid: {e}")
         return None
     except JWTError as e:
-        # Catch any other JWT-related errors
         logger.warning(f"JWT error: {e}")
         return None
 

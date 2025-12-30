@@ -1,7 +1,7 @@
 """
 Deck model
 """
-from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
+from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from app.db.session import Base
@@ -17,10 +17,10 @@ class Deck(Base):
     title = Column(String, nullable=False, index=True)
     description = Column(Text, nullable=True)
     owner_id = Column(Integer, ForeignKey("flashcards.users.id", ondelete="CASCADE"), nullable=False, index=True)
+    is_archived = Column(Boolean, default=False, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
-    # Relationships
     owner = relationship("User", back_populates="decks")
     cards = relationship("Card", back_populates="deck", cascade="all, delete-orphan")
     
