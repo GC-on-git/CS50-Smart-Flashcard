@@ -5,12 +5,18 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import DeckDetail from './pages/DeckDetail';
 import StudySession from './pages/StudySession';
+import Settings from './pages/Settings';
+import Statistics from './pages/Statistics';
 import { apiClient } from './api/client';
+import ToastContainer, { useToast } from './components/ToastContainer';
+import { ToastProvider } from './contexts/ToastContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import './App.css';
 
-function App() {
+function AppContent() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const { toasts, removeToast, success, error, info, warning } = useToast();
 
   useEffect(() => {
     const validateToken = async () => {
@@ -42,53 +48,82 @@ function App() {
   }
 
   return (
-    <Router>
-      <Routes>
-        <Route 
-          path="/login" 
-          element={
-            isAuthenticated ? <Navigate to="/" /> : <Login onLogin={() => setIsAuthenticated(true)} />
-          } 
-        />
-        <Route 
-          path="/register" 
-          element={
-            isAuthenticated ? <Navigate to="/" /> : <Register onRegister={() => setIsAuthenticated(true)} />
-          } 
-        />
-        <Route 
-          path="/" 
-          element={
-            isAuthenticated ? (
-              <Dashboard onLogout={() => setIsAuthenticated(false)} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          } 
-        />
-        <Route 
-          path="/decks/:deckId" 
-          element={
-            isAuthenticated ? (
-              <DeckDetail onLogout={() => setIsAuthenticated(false)} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          } 
-        />
-        <Route 
-          path="/decks/:deckId/study" 
-          element={
-            isAuthenticated ? (
-              <StudySession onLogout={() => setIsAuthenticated(false)} />
-            ) : (
-              <Navigate to="/login" />
-            )
-          } 
-        />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <ToastProvider value={{ success, error, info, warning }}>
+        <Router>
+          <ToastContainer toasts={toasts} removeToast={removeToast} />
+          <Routes>
+            <Route 
+              path="/login" 
+              element={
+                isAuthenticated ? <Navigate to="/" /> : <Login onLogin={() => setIsAuthenticated(true)} />
+              } 
+            />
+            <Route 
+              path="/register" 
+              element={
+                isAuthenticated ? <Navigate to="/" /> : <Register onRegister={() => setIsAuthenticated(true)} />
+              } 
+            />
+            <Route 
+              path="/" 
+              element={
+                isAuthenticated ? (
+                  <Dashboard onLogout={() => setIsAuthenticated(false)} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              } 
+            />
+            <Route 
+              path="/decks/:deckId" 
+              element={
+                isAuthenticated ? (
+                  <DeckDetail onLogout={() => setIsAuthenticated(false)} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              } 
+            />
+            <Route 
+              path="/decks/:deckId/study" 
+              element={
+                isAuthenticated ? (
+                  <StudySession onLogout={() => setIsAuthenticated(false)} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              } 
+            />
+                <Route 
+                  path="/settings" 
+                  element={
+                    isAuthenticated ? (
+                      <Settings onLogout={() => setIsAuthenticated(false)} />
+                    ) : (
+                      <Navigate to="/login" />
+                    )
+                  } 
+                />
+                <Route 
+                  path="/statistics" 
+                  element={
+                    isAuthenticated ? (
+                      <Statistics onLogout={() => setIsAuthenticated(false)} />
+                    ) : (
+                      <Navigate to="/login" />
+                    )
+                  } 
+                />
+          </Routes>
+        </Router>
+      </ToastProvider>
+    </ThemeProvider>
   );
+}
+
+function App() {
+  return <AppContent />;
 }
 
 export default App;

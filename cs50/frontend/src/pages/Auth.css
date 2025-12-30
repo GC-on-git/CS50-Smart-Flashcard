@@ -3,22 +3,22 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #0f0f1e;
+  background: var(--bg-color);
   padding: 2rem;
 }
 
 .auth-card {
-  background: rgba(22, 33, 62, 0.4);
+  background: var(--card-bg);
   padding: 3rem;
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
-  border: 1px solid rgba(163, 147, 191, 0.15);
+  border: 1px solid var(--card-border);
 }
 
 .auth-card h1 {
   text-align: center;
-  color: rgba(163, 147, 191, 0.9);
+  color: var(--header-text);
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   font-weight: 500;
@@ -30,7 +30,7 @@
 
 .auth-card h2 {
   text-align: center;
-  color: rgba(224, 224, 224, 0.8);
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   font-size: 1.125rem;
   font-weight: 400;
@@ -43,7 +43,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: rgba(169, 251, 215, 0.7);
+  color: var(--text-color);
   font-weight: 400;
   font-size: 0.875rem;
 }
@@ -51,22 +51,22 @@
 .form-group input {
   width: 100%;
   padding: 0.75rem;
-  background: rgba(15, 15, 30, 0.4);
-  border: 1px solid rgba(163, 147, 191, 0.2);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 0.9375rem;
   transition: all 0.2s ease;
-  color: #e0e0e0;
+  color: var(--text-color);
 }
 
 .form-group input::placeholder {
-  color: rgba(163, 147, 191, 0.4);
+  color: var(--text-muted);
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: rgba(14, 177, 210, 0.5);
-  background: rgba(15, 15, 30, 0.5);
+  border-color: var(--primary-border);
+  background: var(--section-bg-hover);
 }
 
 .password-input-wrapper {
@@ -85,10 +85,10 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem;
   font-size: 0.875rem;
   font-weight: 400;
-  color: rgba(163, 147, 191, 0.7);
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,22 +98,27 @@
   border-radius: 4px;
 }
 
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
 .password-toggle:hover {
-  color: rgba(163, 147, 191, 0.9);
-  background: rgba(163, 147, 191, 0.05);
+  color: var(--secondary-color);
+  background: var(--secondary-bg);
 }
 
 .password-toggle:focus {
-  outline: 1px solid rgba(14, 177, 210, 0.5);
+  outline: 1px solid var(--primary-border);
   outline-offset: 2px;
 }
 
 button {
   width: 100%;
   padding: 0.75rem;
-  background: rgba(14, 177, 210, 0.15);
-  color: #0EB1D2;
-  border: 1px solid rgba(14, 177, 210, 0.3);
+  background: var(--primary-bg);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-border);
   border-radius: 6px;
   font-size: 0.9375rem;
   font-weight: 400;
@@ -122,8 +127,9 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background: rgba(14, 177, 210, 0.25);
-  border-color: rgba(14, 177, 210, 0.5);
+  background: var(--primary-bg);
+  opacity: 0.8;
+  border-color: var(--primary-color);
 }
 
 button:disabled {
@@ -149,18 +155,19 @@ button:disabled {
 .auth-link {
   text-align: center;
   margin-top: 2rem;
-  color: rgba(224, 224, 224, 0.6);
+  color: var(--text-muted);
   font-size: 0.875rem;
 }
 
 .auth-link a {
-  color: rgba(14, 177, 210, 0.8);
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 400;
   transition: color 0.2s ease;
 }
 
 .auth-link a:hover {
-  color: #0EB1D2;
+  color: var(--primary-color);
+  opacity: 0.8;
   text-decoration: underline;
 }

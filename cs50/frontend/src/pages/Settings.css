@@ -1,0 +1,114 @@
+.settings {
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding: 2rem;
+  position: relative;
+}
+
+.settings-header {
+  margin-bottom: 2rem;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.settings-header h1 {
+  color: var(--header-text);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.back-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  color: var(--header-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+.back-btn:hover {
+  color: var(--secondary-color);
+}
+
+.back-btn:focus {
+  outline: none;
+}
+
+.settings-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.settings-section {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.settings-section h2 {
+  color: rgba(163, 147, 191, 0.9);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+}
+
+.settings-group {
+  margin-bottom: 2rem;
+}
+
+.settings-group:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.settings-group label {
+  display: block;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.settings-select,
+.settings-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  color: var(--text-color);
+  font-size: 0.9375rem;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.settings-select:focus,
+.settings-input:focus {
+  outline: none;
+  border-color: rgba(14, 177, 210, 0.5);
+  box-shadow: 0 0 0 3px rgba(14, 177, 210, 0.1);
+}
+
+.settings-select {
+  cursor: pointer;
+}
+
+.settings-description {
+  color: rgba(163, 147, 191, 0.6);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}

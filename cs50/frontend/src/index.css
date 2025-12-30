@@ -1,3 +1,93 @@
+/* CSS Variables for Theme Support */
+:root {
+  /* Light Theme Defaults */
+  --bg-color: #F3EDE4;
+  --card-bg: #FFFFFF;
+  --section-bg: rgba(243, 237, 228, 0.6);
+  --section-bg-hover: rgba(243, 237, 228, 0.9);
+  --text-color: #3E2723;
+  --text-muted: rgba(62, 39, 35, 0.6);
+  --text-secondary: rgba(62, 39, 35, 0.8);
+  --card-border: rgba(141, 110, 99, 0.3);
+  --input-border: rgba(141, 110, 99, 0.4);
+  --primary-color: #8D6E63;
+  --primary-bg: rgba(141, 110, 99, 0.15);
+  --primary-border: rgba(141, 110, 99, 0.5);
+  --secondary-color: #A1887F;
+  --secondary-bg: rgba(161, 136, 127, 0.2);
+  --secondary-border: rgba(161, 136, 127, 0.4);
+  --header-bg: rgba(215, 204, 200, 0.5);
+  --header-text: #3E2723;
+  --header-text-secondary: #5D4037;
+  --input-bg: #FFFFFF;
+  --badge-color: #6D4C41;
+  --badge-bg: rgba(109, 76, 65, 0.1);
+  --badge-border: rgba(109, 76, 65, 0.3);
+}
+
+html[data-theme='dark'] {
+  --bg-color: #2D1B33;
+  --card-bg: #4A264F;
+  --section-bg: rgba(74, 38, 79, 0.4);
+  --section-bg-hover: rgba(74, 38, 79, 0.6);
+  --text-color: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --text-secondary: #FFD54F;
+  --card-border: rgba(255, 112, 67, 0.3);
+  --input-border: rgba(255, 112, 67, 0.4);
+  --primary-color: #FF7043;
+  --primary-bg: rgba(255, 112, 67, 0.2);
+  --primary-border: rgba(255, 112, 67, 0.5);
+  --secondary-color: #FFB300;
+  --secondary-bg: rgba(255, 179, 0, 0.15);
+  --secondary-border: rgba(255, 179, 0, 0.4);
+  --header-bg: rgba(45, 27, 51, 0.8);
+  --header-text: #FFCA28;
+  --header-text-secondary: #FFFFFF;
+  --input-bg: #3D2444;
+  --badge-color: #FF7043;
+  --badge-bg: rgba(255, 112, 67, 0.2);
+  --badge-border: rgba(255, 112, 67, 0.4);
+}
+
+html[data-theme='light'] {
+  --bg-color: #F3EDE4;
+  --card-bg: #FFFFFF;
+  --section-bg: rgba(243, 237, 228, 0.6);
+  --section-bg-hover: rgba(243, 237, 228, 0.9);
+  --text-color: #3E2723;
+  --text-muted: rgba(62, 39, 35, 0.6);
+  --text-secondary: rgba(62, 39, 35, 0.8);
+  --card-border: rgba(141, 110, 99, 0.3);
+  --input-border: rgba(141, 110, 99, 0.4);
+  --primary-color: #8D6E63;
+  --primary-bg: rgba(141, 110, 99, 0.15);
+  --primary-border: rgba(141, 110, 99, 0.5);
+  --secondary-color: #A1887F;
+  --secondary-bg: rgba(161, 136, 127, 0.2);
+  --secondary-border: rgba(161, 136, 127, 0.4);
+  --header-bg: rgba(215, 204, 200, 0.5);
+  --header-text: #3E2723;
+  --header-text-secondary: #5D4037;
+  --input-bg: #FFFFFF;
+  --badge-color: #6D4C41;
+  --badge-bg: rgba(109, 76, 65, 0.1);
+  --badge-border: rgba(109, 76, 65, 0.3);
+}
+
+/* Font Size Variables */
+html[data-font-size='small'] {
+  font-size: 14px;
+}
+
+html[data-font-size='medium'] {
+  font-size: 16px;
+}
+
+html[data-font-size='large'] {
+  font-size: 18px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,10 +100,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f0f1e;
-  color: #e0e0e0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
