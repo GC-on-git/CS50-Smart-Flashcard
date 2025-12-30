@@ -219,3 +219,6 @@ __marimo__/
 # PyPI configuration
 # -----------------
 .pypirc
+
+# my files
+bin/

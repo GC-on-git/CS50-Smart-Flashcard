@@ -56,6 +56,17 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // Load preferences from backend
   const loadPreferences = useCallback(async () => {
+    // Only load preferences if user is authenticated
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+      // Use defaults from localStorage or system defaults
+      const savedTheme = (localStorage.getItem('theme') as Theme | null) || 'dark';
+      const savedFontSize = (localStorage.getItem('fontSize') as FontSize | null) || 'medium';
+      setThemeState(savedTheme);
+      setFontSizeState(savedFontSize);
+      return;
+    }
+
     try {
       const prefs = await apiClient.getUserPreferences();
       setThemeState((prefs.theme as Theme) || 'dark');
@@ -63,8 +74,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       // Also update localStorage
       localStorage.setItem('theme', prefs.theme || 'dark');
       localStorage.setItem('fontSize', prefs.font_size || 'medium');
-    } catch (error) {
-      console.error('Failed to load preferences:', error);
+    } catch (error: any) {
+      // Only log error if it's not a 401 (unauthorized) - 401 is expected when not logged in
+      if (error?.response?.status !== 401) {
+        console.error('Failed to load preferences:', error);
+      }
       // Use defaults from localStorage or system defaults
       const savedTheme = (localStorage.getItem('theme') as Theme | null) || 'dark';
       const savedFontSize = (localStorage.getItem('fontSize') as FontSize | null) || 'medium';

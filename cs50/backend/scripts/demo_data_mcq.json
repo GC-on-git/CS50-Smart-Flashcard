@@ -1,0 +1,581 @@
+{
+  "decks": [
+    {
+      "title": "Python Programming Basics",
+      "description": "Fundamental Python concepts and syntax",
+      "cards": [
+        {
+          "question": "What is the time complexity of binary search?",
+          "options": [
+            {"text": "O(1)", "is_correct": false},
+            {"text": "O(log n)", "is_correct": true},
+            {"text": "O(n)", "is_correct": false},
+            {"text": "O(n log n)", "is_correct": false}
+          ],
+          "explanation": "Binary search divides the search space in half at each step, resulting in logarithmic time complexity O(log n)."
+        },
+        {
+          "question": "What does the 'self' parameter represent in Python class methods?",
+          "options": [
+            {"text": "A reference to the class itself", "is_correct": false},
+            {"text": "A reference to the instance of the class", "is_correct": true},
+            {"text": "A reference to the parent class", "is_correct": false},
+            {"text": "A reserved keyword with no special meaning", "is_correct": false}
+          ],
+          "explanation": "The 'self' parameter refers to the instance of the class. It allows methods to access and modify instance attributes."
+        },
+        {
+          "question": "What is the difference between a list and a tuple in Python?",
+          "options": [
+            {"text": "Lists are faster than tuples", "is_correct": false},
+            {"text": "Tuples are mutable, lists are immutable", "is_correct": false},
+            {"text": "Lists are mutable, tuples are immutable", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false}
+          ],
+          "explanation": "Lists are mutable (can be modified after creation), while tuples are immutable (cannot be changed once created)."
+        },
+        {
+          "question": "What is a dictionary comprehension in Python?",
+          "options": [
+            {"text": "A way to read dictionary documentation", "is_correct": false},
+            {"text": "A concise way to create dictionaries from iterables", "is_correct": true},
+            {"text": "A method to sort dictionary keys", "is_correct": false},
+            {"text": "A function to merge two dictionaries", "is_correct": false}
+          ],
+          "explanation": "Dictionary comprehension is a concise way to create dictionaries using a single expression, similar to list comprehensions but for key-value pairs."
+        },
+        {
+          "question": "What is the purpose of the '__init__' method in Python?",
+          "options": [
+            {"text": "To initialize the Python interpreter", "is_correct": false},
+            {"text": "To initialize instance variables when an object is created", "is_correct": true},
+            {"text": "To initialize class variables", "is_correct": false},
+            {"text": "To initialize module imports", "is_correct": false}
+          ],
+          "explanation": "The '__init__' method is a constructor that is automatically called when a new instance of a class is created, used to initialize instance attributes."
+        }
+      ]
+    },
+    {
+      "title": "Web Development Fundamentals",
+      "description": "Core concepts of web development including HTML, CSS, and JavaScript",
+      "cards": [
+        {
+          "question": "What does HTML stand for?",
+          "options": [
+            {"text": "HyperText Markup Language", "is_correct": true},
+            {"text": "High-Level Text Markup Language", "is_correct": false},
+            {"text": "Home Tool Markup Language", "is_correct": false},
+            {"text": "Hyperlink and Text Markup Language", "is_correct": false}
+          ],
+          "explanation": "HTML stands for HyperText Markup Language, which is the standard markup language for creating web pages."
+        },
+        {
+          "question": "What is the purpose of CSS?",
+          "options": [
+            {"text": "To structure web page content", "is_correct": false},
+            {"text": "To add interactivity to web pages", "is_correct": false},
+            {"text": "To style and format web page elements", "is_correct": true},
+            {"text": "To store web page data", "is_correct": false}
+          ],
+          "explanation": "CSS (Cascading Style Sheets) is used to style and format the visual appearance of HTML elements, including colors, fonts, layouts, and spacing."
+        },
+        {
+          "question": "What is the Document Object Model (DOM)?",
+          "options": [
+            {"text": "A database for storing web documents", "is_correct": false},
+            {"text": "A programming interface for HTML and XML documents", "is_correct": true},
+            {"text": "A markup language for documents", "is_correct": false},
+            {"text": "A web server protocol", "is_correct": false}
+          ],
+          "explanation": "The DOM is a programming interface that represents the structure of HTML/XML documents as a tree of objects, allowing JavaScript to interact with and manipulate web page elements."
+        },
+        {
+          "question": "What is the difference between 'let' and 'var' in JavaScript?",
+          "options": [
+            {"text": "'let' is function-scoped, 'var' is block-scoped", "is_correct": false},
+            {"text": "'let' is block-scoped, 'var' is function-scoped", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "'let' is only used in loops", "is_correct": false}
+          ],
+          "explanation": "'let' is block-scoped (limited to the block where it's declared), while 'var' is function-scoped (accessible throughout the entire function)."
+        },
+        {
+          "question": "What is an API endpoint?",
+          "options": [
+            {"text": "A physical location where servers are located", "is_correct": false},
+            {"text": "A specific URL where an API can be accessed to perform operations", "is_correct": true},
+            {"text": "The end of an API documentation file", "is_correct": false},
+            {"text": "A type of database connection", "is_correct": false}
+          ],
+          "explanation": "An API endpoint is a specific URL (Uniform Resource Locator) where an API can be accessed to perform specific operations, such as retrieving or modifying data."
+        }
+      ]
+    },
+    {
+      "title": "Data Structures and Algorithms",
+      "description": "Essential data structures and algorithmic concepts",
+      "cards": [
+        {
+          "question": "What is the time complexity of accessing an element in an array by index?",
+          "options": [
+            {"text": "O(1)", "is_correct": true},
+            {"text": "O(log n)", "is_correct": false},
+            {"text": "O(n)", "is_correct": false},
+            {"text": "O(n log n)", "is_correct": false}
+          ],
+          "explanation": "Array access by index is O(1) because arrays use direct memory addressing - the location of any element can be calculated instantly using the base address and index."
+        },
+        {
+          "question": "What is a stack data structure?",
+          "options": [
+            {"text": "A linear data structure with FIFO (First In First Out) principle", "is_correct": false},
+            {"text": "A linear data structure with LIFO (Last In First Out) principle", "is_correct": true},
+            {"text": "A hierarchical data structure", "is_correct": false},
+            {"text": "A graph data structure", "is_correct": false}
+          ],
+          "explanation": "A stack is a linear data structure that follows the LIFO (Last In First Out) principle, where the last element added is the first one to be removed."
+        },
+        {
+          "question": "What is the difference between BFS and DFS?",
+          "options": [
+            {"text": "BFS uses a stack, DFS uses a queue", "is_correct": false},
+            {"text": "BFS uses a queue, DFS uses a stack", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "BFS is faster than DFS", "is_correct": false}
+          ],
+          "explanation": "BFS (Breadth-First Search) uses a queue to explore nodes level by level, while DFS (Depth-First Search) uses a stack (or recursion) to explore as deep as possible before backtracking."
+        },
+        {
+          "question": "What is a hash table?",
+          "options": [
+            {"text": "A table that stores data in sorted order", "is_correct": false},
+            {"text": "A data structure that maps keys to values using a hash function", "is_correct": true},
+            {"text": "A table with only numeric keys", "is_correct": false},
+            {"text": "A two-dimensional array", "is_correct": false}
+          ],
+          "explanation": "A hash table is a data structure that uses a hash function to map keys to array indices, allowing for average O(1) time complexity for insertions, deletions, and lookups."
+        },
+        {
+          "question": "What is dynamic programming?",
+          "options": [
+            {"text": "Programming that changes over time", "is_correct": false},
+            {"text": "A technique to solve problems by breaking them into subproblems and storing results", "is_correct": true},
+            {"text": "Programming with dynamic variables", "is_correct": false},
+            {"text": "A type of object-oriented programming", "is_correct": false}
+          ],
+          "explanation": "Dynamic programming is an optimization technique that solves complex problems by breaking them into simpler subproblems, solving each once, and storing their solutions to avoid redundant calculations."
+        }
+      ]
+    },
+    {
+      "title": "Database Systems",
+      "description": "Fundamental concepts of database design, SQL, and data management",
+      "cards": [
+        {
+          "question": "What is ACID in database transactions?",
+          "options": [
+            {"text": "A database programming language", "is_correct": false},
+            {"text": "Properties that guarantee reliable database transactions (Atomicity, Consistency, Isolation, Durability)", "is_correct": true},
+            {"text": "A type of database index", "is_correct": false},
+            {"text": "A database normalization form", "is_correct": false}
+          ],
+          "explanation": "ACID stands for Atomicity (all or nothing), Consistency (valid state transitions), Isolation (concurrent transactions don't interfere), and Durability (committed changes persist)."
+        },
+        {
+          "question": "What is the primary key in a database table?",
+          "options": [
+            {"text": "The first column in a table", "is_correct": false},
+            {"text": "A unique identifier for each row that cannot be null", "is_correct": true},
+            {"text": "The most important column", "is_correct": false},
+            {"text": "A column that stores passwords", "is_correct": false}
+          ],
+          "explanation": "A primary key is a column or set of columns that uniquely identifies each row in a table. It must be unique and cannot contain NULL values."
+        },
+        {
+          "question": "What is a foreign key?",
+          "options": [
+            {"text": "A key that is not used", "is_correct": false},
+            {"text": "A column that references the primary key of another table", "is_correct": true},
+            {"text": "A key that is foreign to the database", "is_correct": false},
+            {"text": "A backup key", "is_correct": false}
+          ],
+          "explanation": "A foreign key is a column or set of columns in one table that references the primary key of another table, establishing a relationship between the two tables."
+        },
+        {
+          "question": "What is database normalization?",
+          "options": [
+            {"text": "Making database names lowercase", "is_correct": false},
+            {"text": "The process of organizing data to reduce redundancy and improve data integrity", "is_correct": true},
+            {"text": "Converting data to normal form", "is_correct": false},
+            {"text": "Backing up the database", "is_correct": false}
+          ],
+          "explanation": "Normalization is the process of organizing data in a database to eliminate redundancy and dependency issues, typically by dividing large tables into smaller, related tables."
+        },
+        {
+          "question": "What is the difference between INNER JOIN and LEFT JOIN?",
+          "options": [
+            {"text": "INNER JOIN returns all rows from both tables, LEFT JOIN only matching rows", "is_correct": false},
+            {"text": "INNER JOIN returns only matching rows, LEFT JOIN returns all rows from left table and matching rows from right", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "INNER JOIN is faster than LEFT JOIN", "is_correct": false}
+          ],
+          "explanation": "INNER JOIN returns only rows that have matching values in both tables. LEFT JOIN returns all rows from the left table and matching rows from the right table, with NULL for non-matching rows."
+        },
+        {
+          "question": "What is an index in a database?",
+          "options": [
+            {"text": "A table of contents", "is_correct": false},
+            {"text": "A data structure that improves the speed of data retrieval operations", "is_correct": true},
+            {"text": "A list of all tables", "is_correct": false},
+            {"text": "A backup copy of data", "is_correct": false}
+          ],
+          "explanation": "A database index is a data structure that improves the speed of data retrieval operations on a database table by providing quick access to rows based on the indexed columns."
+        },
+        {
+          "question": "What is a transaction in database terms?",
+          "options": [
+            {"text": "A single SQL query", "is_correct": false},
+            {"text": "A sequence of database operations that are executed as a single unit", "is_correct": true},
+            {"text": "A database backup", "is_correct": false},
+            {"text": "A type of database table", "is_correct": false}
+          ],
+          "explanation": "A transaction is a sequence of database operations that are treated as a single unit. Either all operations succeed (commit) or all are rolled back (abort)."
+        },
+        {
+          "question": "What is SQL injection?",
+          "options": [
+            {"text": "A way to insert data into a database", "is_correct": false},
+            {"text": "A security vulnerability where malicious SQL code is inserted into queries", "is_correct": true},
+            {"text": "A database optimization technique", "is_correct": false},
+            {"text": "A type of database join", "is_correct": false}
+          ],
+          "explanation": "SQL injection is a security vulnerability where an attacker inserts malicious SQL code into input fields, potentially allowing unauthorized access to or manipulation of the database."
+        },
+        {
+          "question": "What is the difference between DELETE and TRUNCATE?",
+          "options": [
+            {"text": "DELETE removes specific rows, TRUNCATE removes all rows but keeps table structure", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "DELETE is faster than TRUNCATE", "is_correct": false},
+            {"text": "TRUNCATE can be rolled back, DELETE cannot", "is_correct": false}
+          ],
+          "explanation": "DELETE removes specific rows based on a WHERE clause and can be rolled back. TRUNCATE removes all rows from a table but keeps the table structure and is typically faster but may not be rollback-able in all databases."
+        },
+        {
+          "question": "What is a view in a database?",
+          "options": [
+            {"text": "A visual representation of data", "is_correct": false},
+            {"text": "A virtual table based on the result of a SQL query", "is_correct": true},
+            {"text": "A way to see all tables", "is_correct": false},
+            {"text": "A database backup", "is_correct": false}
+          ],
+          "explanation": "A view is a virtual table that is based on the result of a SQL query. It doesn't store data itself but provides a way to present data from one or more tables in a specific format."
+        },
+        {
+          "question": "What is the purpose of GROUP BY in SQL?",
+          "options": [
+            {"text": "To group tables together", "is_correct": false},
+            {"text": "To group rows that have the same values in specified columns", "is_correct": true},
+            {"text": "To organize columns", "is_correct": false},
+            {"text": "To sort data", "is_correct": false}
+          ],
+          "explanation": "GROUP BY is used to group rows that have the same values in specified columns, typically used with aggregate functions like COUNT, SUM, AVG to perform calculations on each group."
+        },
+        {
+          "question": "What is a stored procedure?",
+          "options": [
+            {"text": "A way to store data", "is_correct": false},
+            {"text": "A precompiled set of SQL statements stored in the database", "is_correct": true},
+            {"text": "A database backup procedure", "is_correct": false},
+            {"text": "A type of database index", "is_correct": false}
+          ],
+          "explanation": "A stored procedure is a precompiled set of SQL statements stored in the database that can be executed repeatedly, improving performance and allowing for code reuse."
+        }
+      ]
+    },
+    {
+      "title": "Computer Networks",
+      "description": "Networking fundamentals, protocols, and internet technologies",
+      "cards": [
+        {
+          "question": "What does TCP/IP stand for?",
+          "options": [
+            {"text": "Transmission Control Protocol / Internet Protocol", "is_correct": true},
+            {"text": "Total Control Protocol / Internet Protocol", "is_correct": false},
+            {"text": "Transfer Control Protocol / Internet Protocol", "is_correct": false},
+            {"text": "Transmission Control Process / Internet Process", "is_correct": false}
+          ],
+          "explanation": "TCP/IP stands for Transmission Control Protocol/Internet Protocol, which is the fundamental communication protocol suite used for the Internet and most networks."
+        },
+        {
+          "question": "What is the difference between TCP and UDP?",
+          "options": [
+            {"text": "TCP is connectionless, UDP is connection-oriented", "is_correct": false},
+            {"text": "TCP is connection-oriented and reliable, UDP is connectionless and faster", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "TCP is used for video, UDP for web pages", "is_correct": false}
+          ],
+          "explanation": "TCP is connection-oriented, provides reliable delivery with error checking and flow control. UDP is connectionless, faster but doesn't guarantee delivery or order."
+        },
+        {
+          "question": "What is an IP address?",
+          "options": [
+            {"text": "A unique identifier for a device on a network", "is_correct": true},
+            {"text": "A password for network access", "is_correct": false},
+            {"text": "A type of network cable", "is_correct": false},
+            {"text": "A network protocol", "is_correct": false}
+          ],
+          "explanation": "An IP address is a unique numerical identifier assigned to each device connected to a network, allowing devices to communicate with each other."
+        },
+        {
+          "question": "What is DNS?",
+          "options": [
+            {"text": "Domain Name System - translates domain names to IP addresses", "is_correct": true},
+            {"text": "Data Network System", "is_correct": false},
+            {"text": "Digital Network Service", "is_correct": false},
+            {"text": "Dynamic Network Storage", "is_correct": false}
+          ],
+          "explanation": "DNS (Domain Name System) is a hierarchical naming system that translates human-readable domain names (like www.example.com) into IP addresses that computers use to identify each other."
+        },
+        {
+          "question": "What is HTTP?",
+          "options": [
+            {"text": "HyperText Transfer Protocol - protocol for transferring web pages", "is_correct": true},
+            {"text": "High Transfer Text Protocol", "is_correct": false},
+            {"text": "Hyper Transfer Text Process", "is_correct": false},
+            {"text": "Home Transfer Text Protocol", "is_correct": false}
+          ],
+          "explanation": "HTTP (HyperText Transfer Protocol) is the protocol used for transferring web pages and other resources over the Internet. HTTPS is the secure version using encryption."
+        },
+        {
+          "question": "What is a router?",
+          "options": [
+            {"text": "A device that connects multiple networks and forwards data packets", "is_correct": true},
+            {"text": "A device that only connects computers", "is_correct": false},
+            {"text": "A type of network cable", "is_correct": false},
+            {"text": "A software application", "is_correct": false}
+          ],
+          "explanation": "A router is a networking device that connects multiple networks and forwards data packets between them based on IP addresses, making routing decisions."
+        },
+        {
+          "question": "What is the OSI model?",
+          "options": [
+            {"text": "A 7-layer conceptual model for network communication", "is_correct": true},
+            {"text": "A type of network cable", "is_correct": false},
+            {"text": "A programming language", "is_correct": false},
+            {"text": "A database model", "is_correct": false}
+          ],
+          "explanation": "The OSI (Open Systems Interconnection) model is a 7-layer conceptual framework that standardizes the functions of a telecommunication or computing system into abstraction layers."
+        },
+        {
+          "question": "What is a firewall?",
+          "options": [
+            {"text": "A security device that monitors and controls network traffic", "is_correct": true},
+            {"text": "A type of router", "is_correct": false},
+            {"text": "A network cable", "is_correct": false},
+            {"text": "A web browser", "is_correct": false}
+          ],
+          "explanation": "A firewall is a network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules, acting as a barrier between trusted and untrusted networks."
+        },
+        {
+          "question": "What is a subnet mask?",
+          "options": [
+            {"text": "A mask that hides network addresses", "is_correct": false},
+            {"text": "A number that identifies which portion of an IP address is the network and which is the host", "is_correct": true},
+            {"text": "A password for network access", "is_correct": false},
+            {"text": "A type of network protocol", "is_correct": false}
+          ],
+          "explanation": "A subnet mask is a 32-bit number that divides an IP address into network and host portions, allowing networks to be subdivided into smaller subnetworks."
+        },
+        {
+          "question": "What is latency in networking?",
+          "options": [
+            {"text": "The speed of data transfer", "is_correct": false},
+            {"text": "The time delay between sending and receiving data", "is_correct": true},
+            {"text": "The amount of data transferred", "is_correct": false},
+            {"text": "The number of network connections", "is_correct": false}
+          ],
+          "explanation": "Latency is the time delay between when data is sent and when it is received. Lower latency means faster response times, which is crucial for real-time applications."
+        },
+        {
+          "question": "What is bandwidth?",
+          "options": [
+            {"text": "The maximum rate of data transfer across a network path", "is_correct": true},
+            {"text": "The time delay in data transfer", "is_correct": false},
+            {"text": "The number of devices on a network", "is_correct": false},
+            {"text": "A type of network cable", "is_correct": false}
+          ],
+          "explanation": "Bandwidth is the maximum rate of data transfer across a given network path, typically measured in bits per second (bps) or bytes per second."
+        },
+        {
+          "question": "What is a switch in networking?",
+          "options": [
+            {"text": "A device that connects devices on the same network and forwards data based on MAC addresses", "is_correct": true},
+            {"text": "A device that connects different networks", "is_correct": false},
+            {"text": "A type of router", "is_correct": false},
+            {"text": "A network protocol", "is_correct": false}
+          ],
+          "explanation": "A network switch is a device that connects devices on the same local area network (LAN) and forwards data frames based on MAC addresses, operating at the data link layer."
+        },
+        {
+          "question": "What is the difference between IPv4 and IPv6?",
+          "options": [
+            {"text": "IPv4 uses 32-bit addresses, IPv6 uses 128-bit addresses providing more address space", "is_correct": true},
+            {"text": "IPv4 is newer than IPv6", "is_correct": false},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "IPv6 is only used for local networks", "is_correct": false}
+          ],
+          "explanation": "IPv4 uses 32-bit addresses (about 4.3 billion addresses), while IPv6 uses 128-bit addresses (virtually unlimited addresses), solving the IPv4 address exhaustion problem."
+        }
+      ]
+    },
+    {
+      "title": "Operating Systems",
+      "description": "Core concepts of operating systems, processes, memory management, and system architecture",
+      "cards": [
+        {
+          "question": "What is an operating system?",
+          "options": [
+            {"text": "A computer program", "is_correct": false},
+            {"text": "System software that manages computer hardware and provides services for applications", "is_correct": true},
+            {"text": "A type of computer hardware", "is_correct": false},
+            {"text": "A programming language", "is_correct": false}
+          ],
+          "explanation": "An operating system is system software that manages computer hardware, software resources, and provides common services for computer programs, acting as an intermediary between users and hardware."
+        },
+        {
+          "question": "What is a process in operating systems?",
+          "options": [
+            {"text": "A running instance of a program with its own memory space", "is_correct": true},
+            {"text": "A file on disk", "is_correct": false},
+            {"text": "A type of memory", "is_correct": false},
+            {"text": "A computer program", "is_correct": false}
+          ],
+          "explanation": "A process is a running instance of a program that has its own memory space, program counter, and system resources. Multiple processes can run the same program independently."
+        },
+        {
+          "question": "What is the difference between a process and a thread?",
+          "options": [
+            {"text": "A thread is a lightweight process that shares memory with other threads in the same process", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "A process is lighter than a thread", "is_correct": false},
+            {"text": "Threads cannot communicate with each other", "is_correct": false}
+          ],
+          "explanation": "A thread is a lightweight unit of execution within a process. Threads share the same memory space and resources, while processes have separate memory spaces. Threads are more efficient for concurrent operations."
+        },
+        {
+          "question": "What is virtual memory?",
+          "options": [
+            {"text": "Memory that doesn't exist", "is_correct": false},
+            {"text": "A memory management technique that uses disk space to extend RAM", "is_correct": true},
+            {"text": "A type of RAM", "is_correct": false},
+            {"text": "Memory used only for virtual machines", "is_correct": false}
+          ],
+          "explanation": "Virtual memory is a memory management technique that uses secondary storage (disk) to extend the apparent size of physical RAM, allowing programs to use more memory than physically available."
+        },
+        {
+          "question": "What is CPU scheduling?",
+          "options": [
+            {"text": "Planning when to buy a new CPU", "is_correct": false},
+            {"text": "The process of determining which process runs on the CPU at a given time", "is_correct": true},
+            {"text": "Setting the CPU clock speed", "is_correct": false},
+            {"text": "Installing CPU drivers", "is_correct": false}
+          ],
+          "explanation": "CPU scheduling is the process by which the operating system decides which process should run on the CPU at any given time, using algorithms like round-robin, priority-based, or shortest job first."
+        },
+        {
+          "question": "What is deadlock?",
+          "options": [
+            {"text": "A locked computer", "is_correct": false},
+            {"text": "A situation where two or more processes are waiting for each other to release resources", "is_correct": true},
+            {"text": "A type of memory error", "is_correct": false},
+            {"text": "A network connection issue", "is_correct": false}
+          ],
+          "explanation": "Deadlock is a situation where two or more processes are blocked forever, each waiting for a resource held by another process in the set, creating a circular wait condition."
+        },
+        {
+          "question": "What is a semaphore?",
+          "options": [
+            {"text": "A traffic signal", "is_correct": false},
+            {"text": "A synchronization primitive used to control access to shared resources", "is_correct": true},
+            {"text": "A type of memory", "is_correct": false},
+            {"text": "A file system", "is_correct": false}
+          ],
+          "explanation": "A semaphore is a synchronization primitive used to control access to shared resources by multiple processes or threads, preventing race conditions and ensuring mutual exclusion."
+        },
+        {
+          "question": "What is paging in memory management?",
+          "options": [
+            {"text": "Turning pages in a book", "is_correct": false},
+            {"text": "A memory management scheme where memory is divided into fixed-size pages", "is_correct": true},
+            {"text": "A type of file system", "is_correct": false},
+            {"text": "A network protocol", "is_correct": false}
+          ],
+          "explanation": "Paging is a memory management scheme where physical memory is divided into fixed-size blocks called frames, and logical memory is divided into pages of the same size, allowing non-contiguous allocation."
+        },
+        {
+          "question": "What is the kernel of an operating system?",
+          "options": [
+            {"text": "The outer layer of the OS", "is_correct": false},
+            {"text": "The core component that manages system resources and provides low-level services", "is_correct": true},
+            {"text": "A type of file", "is_correct": false},
+            {"text": "A user interface", "is_correct": false}
+          ],
+          "explanation": "The kernel is the core component of an operating system that manages system resources, provides low-level services to other parts of the OS, and handles interactions between hardware and software."
+        },
+        {
+          "question": "What is context switching?",
+          "options": [
+            {"text": "Switching between applications", "is_correct": false},
+            {"text": "The process of saving and restoring CPU state when switching between processes", "is_correct": true},
+            {"text": "Changing network connections", "is_correct": false},
+            {"text": "Switching user accounts", "is_correct": false}
+          ],
+          "explanation": "Context switching is the process of saving the state of a running process and restoring the state of another process, allowing the CPU to switch between multiple processes efficiently."
+        },
+        {
+          "question": "What is a file system?",
+          "options": [
+            {"text": "A way to organize and store files on storage devices", "is_correct": true},
+            {"text": "A type of memory", "is_correct": false},
+            {"text": "A network protocol", "is_correct": false},
+            {"text": "A computer program", "is_correct": false}
+          ],
+          "explanation": "A file system is a method of organizing and storing files on storage devices, providing a way to name, store, retrieve, and manage files and directories."
+        },
+        {
+          "question": "What is multiprogramming?",
+          "options": [
+            {"text": "Writing multiple programs", "is_correct": false},
+            {"text": "Running multiple programs simultaneously by keeping several in memory", "is_correct": true},
+            {"text": "A programming language", "is_correct": false},
+            {"text": "A type of CPU", "is_correct": false}
+          ],
+          "explanation": "Multiprogramming is a technique where multiple programs are kept in memory simultaneously, and the CPU switches between them to maximize CPU utilization and system throughput."
+        },
+        {
+          "question": "What is a system call?",
+          "options": [
+            {"text": "A phone call to tech support", "is_correct": false},
+            {"text": "A programmatic way for applications to request services from the operating system", "is_correct": true},
+            {"text": "A function call within a program", "is_correct": false},
+            {"text": "A network protocol", "is_correct": false}
+          ],
+          "explanation": "A system call is a programmatic way for an application to request a service from the operating system kernel, such as file operations, process management, or network communication."
+        },
+        {
+          "question": "What is the difference between preemptive and non-preemptive scheduling?",
+          "options": [
+            {"text": "Preemptive allows the OS to interrupt running processes, non-preemptive requires processes to voluntarily yield", "is_correct": true},
+            {"text": "There is no difference", "is_correct": false},
+            {"text": "Preemptive is slower", "is_correct": false},
+            {"text": "Non-preemptive is more common", "is_correct": false}
+          ],
+          "explanation": "In preemptive scheduling, the OS can interrupt a running process to give CPU time to another process. In non-preemptive scheduling, a process runs until it voluntarily yields or completes."
+        }
+      ]
+    }
+  ]
+}
+
