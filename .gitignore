@@ -222,3 +222,6 @@ __marimo__/
 
 # my files
 bin/
+
+# Project: ignore backend scripts (local utilities)
+cs50/backend/scripts/
