@@ -4,6 +4,7 @@ FastAPI MVP - Main Application Entry Point
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.auth import routes as auth
+from app.core.config import settings
 from app.routers import users, decks, cards, preferences, statistics
 
 app = FastAPI(
@@ -12,9 +13,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
+allowed_origins = [o.strip() for o in (settings.ALLOWED_ORIGINS or "").split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins or ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

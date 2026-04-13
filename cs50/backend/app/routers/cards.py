@@ -54,6 +54,13 @@ async def generate_cards_endpoint(
             detail="Deck not found"
         )
     
+    # Check if AI_API_KEY is configured
+    if not settings.AI_API_KEY:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="AI_API_KEY is not configured. Please add AI_API_KEY to your .env file to use AI card generation. You can get an API key from https://openrouter.ai/"
+        )
+    
     try:
         generated_cards = generate_cards_with_ai(
             topic=request.topic or "",
