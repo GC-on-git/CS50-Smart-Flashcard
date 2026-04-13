@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import DeckDetail from './pages/DeckDetail';
-import StudySession from './pages/StudySession';
-import Settings from './pages/Settings';
-import Statistics from './pages/Statistics';
+import { useState, useEffect, lazy, Suspense } from 'react';
+const Login = lazy(() => import('./pages/Login'));
+const Register = lazy(() => import('./pages/Register'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const DeckDetail = lazy(() => import('./pages/DeckDetail'));
+const StudySession = lazy(() => import('./pages/StudySession'));
+const Settings = lazy(() => import('./pages/Settings'));
+const Statistics = lazy(() => import('./pages/Statistics'));
 import { apiClient } from './api/client';
 import ToastContainer, { useToast } from './components/ToastContainer';
 import { ToastProvider } from './contexts/ToastContext';
@@ -52,6 +52,7 @@ function AppContent() {
       <ToastProvider value={{ success, error, info, warning }}>
         <Router>
           <ToastContainer toasts={toasts} removeToast={removeToast} />
+          <Suspense fallback={<div className="loading">Loading...</div>}>
           <Routes>
             <Route 
               path="/login" 
@@ -116,6 +117,7 @@ function AppContent() {
                   } 
                 />
           </Routes>
+          </Suspense>
         </Router>
       </ToastProvider>
     </ThemeProvider>

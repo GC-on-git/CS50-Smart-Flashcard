@@ -7,6 +7,16 @@ export default defineConfig({
   // Centralize env files at repo root (so frontend reads from <repo>/.env)
   envDir: path.resolve(__dirname, '../..'),
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          http: ['axios'],
+        },
+      },
+    },
+  },
   server: {
     port: 3000,
     proxy: {

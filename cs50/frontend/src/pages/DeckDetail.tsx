@@ -249,16 +249,7 @@ export default function DeckDetail({ onLogout: _onLogout }: DeckDetailProps) {
           </svg>
         </button>
         <div className="header-title-container">
-          <h1>
-            <span style={{ fontSize: '1.5rem', marginRight: '0.5rem', display: 'inline-flex', alignItems: 'center' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                <path d="M8 2v20"></path>
-              </svg>
-            </span>
-            {deck?.title}
-          </h1>
+          <h1>{deck?.title}</h1>
           {deck?.description && <p>{deck.description}</p>}
         </div>
         <div className="header-actions">
