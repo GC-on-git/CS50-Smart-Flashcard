@@ -14,10 +14,12 @@ app = FastAPI(
 )
 
 allowed_origins = [o.strip() for o in (settings.ALLOWED_ORIGINS or "").split(",") if o.strip()]
+allowed_origin_regex = (settings.ALLOWED_ORIGIN_REGEX or "").strip() or None
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins or ["*"],
+    allow_origins=[] if allowed_origin_regex else (allowed_origins or ["*"]),
+    allow_origin_regex=allowed_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

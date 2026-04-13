@@ -8,6 +8,7 @@ from typing import Optional
 class Settings(BaseSettings):
     PORT: int = 8000
     ALLOWED_ORIGINS: str = "http://localhost:3000"
+    ALLOWED_ORIGIN_REGEX: Optional[str] = None
 
     DATABASE_URL: str = "postgresql://user:password@localhost/dbname"
     
