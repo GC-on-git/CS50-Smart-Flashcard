@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 214, 186, 1);
+  color: var(--warning-color);
   animation: flame 1.5s ease-in-out infinite;
 }
 
@@ -76,7 +76,7 @@ html[data-theme='light'] .streak-icon {
 }
 
 .streak-count {
-  color: rgba(255, 214, 186, 1);
+  color: var(--warning-color);
   font-size: 0.9375rem;
   font-weight: 700;
   line-height: 1;
@@ -95,7 +95,7 @@ html[data-theme='light'] .streak-count {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .settings-icon-btn:hover {
@@ -106,17 +106,17 @@ html[data-theme='light'] .streak-count {
 .logout-icon-btn {
   background: none;
   border: none;
-  color: rgba(255, 102, 99, 1);
+  color: var(--error-color);
   padding: 0.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .logout-icon-btn:hover {
-  color: #FF6663;
+  opacity: 0.8;
   transform: scale(1.1);
 }
 
@@ -166,7 +166,7 @@ html[data-theme='light'] .streak-count {
   font-size: 0.9375rem;
   color: var(--text-color);
   position: relative;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .search-input::placeholder {
@@ -194,7 +194,7 @@ html[data-theme='light'] .streak-count {
   font-size: 0.9375rem;
   font-weight: 400;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -215,7 +215,7 @@ html[data-theme='light'] .streak-count {
   font-size: 0.875rem;
   font-weight: 400;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -247,7 +247,7 @@ html[data-theme='light'] .streak-count {
   font-size: 0.9375rem;
   font-family: inherit;
   color: var(--text-color);
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .new-deck-form input::placeholder,
@@ -278,7 +278,7 @@ html[data-theme='light'] .streak-count {
   background: var(--card-bg);
   padding: 1.75rem;
   border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--card-border);
   aspect-ratio: 1;
   display: flex;
@@ -289,8 +289,8 @@ html[data-theme='light'] .streak-count {
 .deck-card:hover {
   border-color: var(--secondary-border);
   background: var(--section-bg-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--secondary-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px var(--secondary-bg);
 }
 
 .deck-card-header {
@@ -325,12 +325,12 @@ html[data-theme='light'] .streak-count {
   width: 32px;
   height: 32px;
   padding: 0;
-  border: 1px solid rgba(255, 102, 99, 0.3);
+  border: 1px solid var(--error-bg);
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   background: transparent;
-  color: rgba(255, 102, 99, 0.7);
+  color: var(--error-color);
   flex-shrink: 0;
 }
 
@@ -340,14 +340,13 @@ html[data-theme='light'] .streak-count {
 }
 
 .btn-delete {
-  border-color: rgba(255, 102, 99, 0.3);
-  color: rgba(255, 102, 99, 0.7);
+  border-color: var(--error-bg);
+  color: var(--error-color);
 }
 
 .btn-delete:hover {
-  background: rgba(255, 102, 99, 0.1);
-  border-color: rgba(255, 102, 99, 0.5);
-  color: #FF6663;
+  background: var(--error-bg);
+  border-color: var(--error-color);
 }
 
 .deck-description {
@@ -392,31 +391,29 @@ html[data-theme='light'] .streak-count {
   width: 40px;
   height: 40px;
   padding: 0;
-  background: rgba(163, 147, 191, 0.1);
-  border: 1px solid rgba(163, 147, 191, 0.3);
+  background: var(--section-bg);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
-  color: rgba(163, 147, 191, 0.8);
+  color: var(--text-muted);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-icon-only:hover {
-  background: rgba(163, 147, 191, 0.2);
-  border-color: rgba(163, 147, 191, 0.5);
-  color: #A393BF;
+  background: var(--section-bg-hover);
+  border-color: var(--text-muted);
+  color: var(--text-color);
   transform: scale(1.1);
 }
 
 .btn-icon-only.btn-study {
-  background: rgba(14, 177, 210, 0.15);
-  border-color: rgba(14, 177, 210, 0.3);
-  color: rgba(14, 177, 210, 0.9);
+  background: var(--primary-bg);
+  border-color: var(--primary-border);
+  color: var(--primary-color);
 }
 
 .btn-icon-only.btn-study:hover {
-  background: rgba(14, 177, 210, 0.25);
-  border-color: rgba(14, 177, 210, 0.5);
-  color: #0EB1D2;
+  opacity: 0.8;
   transform: scale(1.1);
 }
 
